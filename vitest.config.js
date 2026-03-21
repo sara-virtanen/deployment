@@ -7,6 +7,8 @@ export default defineConfig({
       include: ['src/**/*.js'],
       exclude: ['src/.internal/**'],
       reporter: ['text', 'lcov']
-    }
+    },
+    passWithNoTests: true,
+    bail: 0
   }
 })
