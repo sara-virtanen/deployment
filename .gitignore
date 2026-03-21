@@ -1,0 +1,15 @@
+# Dependency directories
+node_modules/
+
+# History files
+.history
+
+# JSDoc config file
+jsdoc.json
+
+# JSDoc output directory
+docs/
+
+# Log files
+logs/
+*.log
