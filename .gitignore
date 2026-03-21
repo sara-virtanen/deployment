@@ -13,3 +13,6 @@ docs/
 # Log files
 logs/
 *.log
+
+# Coverage output
+coverage/

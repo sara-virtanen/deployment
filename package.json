@@ -1,0 +1,26 @@
+{
+  "name": "deployment",
+  "version": "1.0.0",
+  "description": "AT00BY10-3012 Ohjelmistojen ylläpito ja testaus – Task VIII - Deployment",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "coverage": "vitest run --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sara-virtanen/deployment.git"
+  },
+  "keywords": [],
+  "author": "Sara Virtanen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sara-virtanen/deployment#readme"
+  },
+  "homepage": "https://github.com/sara-virtanen/deployment#readme",
+  "devDependencies": {
+    "@vitest/coverage-v8": "^2.1.9",
+    "vitest": "^2.1.9"
+  }
+}
