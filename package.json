@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "vitest run",
-    "coverage": "vitest run --coverage --reporter=verbose || true"
+    "coverage": "vitest run --coverage"
   },
   "repository": {
     "type": "git",
