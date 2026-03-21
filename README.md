@@ -1,4 +1,4 @@
 # deployment
 AT00BY10-3012 Ohjelmistojen ylläpito ja testaus – Task VIII - Deployment
 
-[![Coverage Status](https://coveralls.io/repos/github/sara-virtanen/deployment/badge.svg?branch=main&kill_cache=1)](https://coveralls.io/github/sara-virtanen/deployment?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/sara-virtanen/deployment/badge.svg?cache-control=no-cache)](https://coveralls.io/github/sara-virtanen/deployment?branch=main)
