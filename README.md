@@ -116,7 +116,7 @@ src/toFinite.js:1:import toNumber from './toNumber.js'
 src/toInteger.js:1:import toFinite from './toFinite.js'
 ```
 
-This revealed dependency chains such as `toNumber → toFinite → toInteger → chunk/drop`, meaning that testing `toNumber` provided foundational coverage for all files above it in the chain. I prioritized testing these foundational modules first.
+This revealed dependency chains such as `toNumber → toFinite → toInteger → chunk`, meaning that testing `toNumber` provided foundational coverage for all other files in the chain. I prioritized testing these foundational modules first.
 
 I then read all remaining source files visually and selected additional files to test based on identifying suspected bugs.
 
