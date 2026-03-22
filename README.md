@@ -15,7 +15,7 @@ I started by mapping the library's dependencies using grep to identify which fil
 
 Once foundational files were covered, I read the remaining source files visually to identify obvious bugs before deciding which ones to test. Several bugs were spotted this way before writing a single test.
 
-Tests were written using Vitest. Coverage was reported via GitHub Actions and Coveralls only — local coverage reporting could not be made to work on Windows.
+Tests were written using Vitest. Coverage was reported via GitHub Actions and Coveralls only, since local coverage reporting could not be made to work on Windows.
 
 ## Coverage issues encountered locally
 
@@ -42,7 +42,7 @@ Coverage was ultimately confirmed to work correctly in GitHub Actions on Ubuntu,
 - npm: 10.9.3
 - Test runner: Vitest 2.1.9
 
-Tests were run locally during development using `npm test` to verify correctness before pushing to GitHub.
+Tests were run locally during development to verify correctness before pushing to GitHub.
 
 **CI environment**
 
