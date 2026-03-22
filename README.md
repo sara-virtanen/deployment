@@ -152,6 +152,20 @@ it('should return empty string for null', () => {
 })
 ```
 
+## Running tests
+
+All tests can be run together with:
+```bash
+npm test
+```
+
+Individual test files can be run in isolation with:
+```bash
+npx vitest run test/<filename>.test.js
+```
+
+Running tests individually was the preferred approach during development, allowing each new test file to be verified before moving on to the next.
+
 ## Test rationale
 
 Tests were written based on the documented behaviour described in each function's JSDoc comment, not based on what the code actually does. Where the code deviated from the documentation, the test was written to reflect the documented expectation, causing it to fail and exposing the bug.
