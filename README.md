@@ -141,7 +141,7 @@ I then read all remaining source files visually and selected additional files to
 
 # 4. Test implementation
 
-Tests were written using Vitest with the `describe`/`it`/`expect` syntax. Each source file has its own dedicated test file in the `test/` directory, named after the file it tests.
+Tests were written using Vitest, with assertions using the `expect` syntax. Each source file has its own dedicated test file in the `test/` directory, named after the file it tests.
 
 ## Test style
 
