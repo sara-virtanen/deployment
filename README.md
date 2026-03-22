@@ -3,7 +3,7 @@
 **Author:** Sara Virtanen  
 **Course:** AT00BY10-3012 Ohjelmistojen ylläpito ja testaus
 
-[![Coverage Status](https://coveralls.io/repos/github/sara-virtanen/deployment/badge.svg?cache-control=no-cache)](https://coveralls.io/github/sara-virtanen/deployment?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/sara-virtanen/deployment/badge.svg)](https://coveralls.io/github/sara-virtanen/deployment?branch=main)
 
 # 1. Introduction and approach
 
@@ -197,7 +197,9 @@ Several bugs were identified visually before writing tests. In these cases, test
 | 10 | `castArray.js` | Returns `[undefined]` instead of `[]` when called with no arguments |
 | 11 | `countBy.js` | Initialises count at `0` instead of `1`, every count is one less than expected |
 
-All issues are documented in the repository's issue tracker with root cause analysis, expected vs actual behaviour, and the number of failing unit tests confirming each bug.
+All issues are documented in the [repository's issue tracker](https://github.com/sara-virtanen/deployment/issues) with root cause analysis, expected vs actual behaviour, and the number of failing unit tests confirming each bug.
+
+![Issue Tracker](https://github.com/user-attachments/assets/bb047e2d-7b2f-44fb-883b-f671fb5bb2fd)
 
 # 6. Coverage results
 
