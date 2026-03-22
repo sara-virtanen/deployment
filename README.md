@@ -11,19 +11,19 @@ The goal of this task was to implement unit tests for a provided JavaScript util
 
 ## Approach
 
-I started by mapping the library's dependency graph using grep to identify which files imported from other source files. I prioritized testing foundational modules first, as testing these provided cascade coverage for files that depend on them.
+I started by mapping the library's dependencies using grep to identify which files imported from other source files. I prioritized testing foundational modules first, as testing these provided cascade coverage for files that depend on them.
 
-Once foundational files were covered, I read the remaining source files visually to identify obvious bugs before deciding which ones to test dynamically. Several bugs were spotted this way before writing a single test.
+Once foundational files were covered, I read the remaining source files visually to identify obvious bugs before deciding which ones to test. Several bugs were spotted this way before writing a single test.
 
-Tests were written using Vitest. Coverage was reported via GitHub Actions and Coveralls only — local coverage reporting could not be made to work on Windows with ES modules.
+Tests were written using Vitest. Coverage was reported via GitHub Actions and Coveralls only — local coverage reporting could not be made to work on Windows.
 
 ## Coverage issues encountered locally
 
 I attempted to get local coverage working through several approaches:
 
-- Mocha + NYC (Istanbul) produced 0% coverage with ES modules on Windows
+- Mocha + c8 produced 0% coverage
 
-- Mocha + c8 – same result, 0% coverage regardless of configuration
+- Mocha + NYC (Istanbul) – same result, 0% coverage regardless of configuration
 
 - Switching to Vitest + `@vitest/coverage-v8` still 0% locally, traced to a known incompatibility between V8 coverage and ES modules on Windows with spaces and special characters in the file path
 
@@ -32,7 +32,7 @@ I attempted to get local coverage working through several approaches:
 - Moving the project to a path without spaces or special
  characters resolved the Istanbul crash but coverage remained 0%
 
-Coverage was ultimately confirmed to work correctly in GitHub Actions on Ubuntu, which is the authoritative source for all coverage numbers in this report.
+Coverage was ultimately confirmed to work correctly in GitHub Actions on Ubuntu, but it was extremely annoying to not have coverage available locally in the author's Windows development environment.
 
 # 2. Testing environment and configuration
 
