@@ -212,7 +212,7 @@ Running tests individually was the preferred approach during development, allowi
 
 Tests were written based on the documented behaviour described in each function's JSDoc comment, not based on what the code actually does. A failing test is therefore a direct signal that the implementation deviates from its specification.
 
-The test suite consists of 30 test files and 204 individual unit tests. Each source file has its own dedicated test file, named after the file it tests. The number of tests per file varies based on the complexity of the function — simpler functions with few branches have fewer tests, while more complex functions with multiple code paths and edge cases have more.  
+The test suite consists of 30 test files and 204 individual unit tests. Each source file has its own dedicated test file, named after the file it tests. The number of tests per file varies based on the complexity of the function – simpler functions with few branches have fewer tests, while more complex functions with multiple code paths and edge cases have more.  
 
 Every test file covers at minimum:  
 
