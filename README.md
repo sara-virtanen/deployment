@@ -222,10 +222,31 @@ Every test file covers at minimum:
 - Edge cases specific to the function, such as NaN handling, negative numbers, boundary values, and type coercion
 - Both truthy and falsy branches where applicable
 
+## Test results
 
-# 6. Bugs found
+Of the 204 tests, 176 pass and 28 fail across 11 test files.  
 
-Of the 204 tests, 176 pass and 28 fail.
+**Passing test files (19):** `capitalize`, `difference`, `drop`, `endsWith`, `isArguments`, `isArrayLike`, `isArrayLikeObject`, `isBoolean`, `isDate`, `isEmpty`, `isLength`, `isObject`, `isObjectLike`, `isSymbol`, `toFinite`, `toInteger`, `toNumber`, `upperFirst`, `words`  
+
+**Failing test files (11):**  
+
+| Test file | Tests failed |
+|-----------|-------------|
+| `camelCase.test.js` | 5 of 5 |
+| `castArray.test.js` | 1 of 7 |
+| `chunk.test.js` | 3 of 6 |
+| `clamp.test.js` | 3 of 6 |
+| `compact.test.js` | 3 of 5 |
+| `countBy.test.js` | 3 of 4 |
+| `defaultTo.test.js` | 1 of 6 |
+| `defaultToAny.test.js` | 1 of 6 |
+| `divide.test.js` | 4 of 4 |
+| `filter.test.js` | 2 of 5 |
+| `toString.test.js` | 2 of 8 |
+
+All 28 failures correspond directly to confirmed bugs documented in section 6 below.
+
+# 6. Bugs found  
 
 Several bugs were identified visually before writing tests. In these cases, tests were written specifically to confirm the suspected bug. In other cases, bugs were discovered when tests failed against code that appeared correct on first reading.
 
