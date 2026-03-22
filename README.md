@@ -217,8 +217,8 @@ Several bugs were identified visually before writing tests. In these cases, test
 | 4 | `clamp.js` | Comparison operators are inverted, always returning the lower bound |
 | 5 | `compact.js` | `resIndex` initialised at `-1` instead of `0`, silently losing the first truthy element |
 | 6 | `filter.js` | Result initialised as `[[]]` instead of `[]`, always returning an unwanted empty array element when no elements pass the predicate |
-| 7 | `defaultTo.js` | Missing NaN check — only handles `null` and `undefined` |
-| 8 | `defaultToAny.js` | Cascading bug from `defaultTo.js` — NaN is treated as a valid default value |
+| 7 | `defaultTo.js` | Missing NaN check – only handles `null` and `undefined` |
+| 8 | `defaultToAny.js` | Cascading bug from `defaultTo.js`  (sub-issue) – NaN is treated as a valid default value |
 | 9 | `divide.js` | Divides `divisor` by itself instead of `dividend` by `divisor`, always returning `1` |
 | 10 | `castArray.js` | Returns `[undefined]` instead of `[]` when called with no arguments |
 | 11 | `countBy.js` | Initialises count at `0` instead of `1`, every count is one less than expected |
