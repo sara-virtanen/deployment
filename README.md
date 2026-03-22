@@ -61,7 +61,60 @@ Tests were run locally during development using `npm test` to verify correctness
 - `vitest.config.js` – configures coverage provider, include/exclude patterns, lcov reporter, and `reportOnFailure: true` to ensure coverage is written even when tests fail
 - `.github/workflows/ci.yml` – runs on push to main, installs dependencies, runs coverage, uploads lcov report to Coveralls
 
-# 3. Files tested and rationale
+# 3. CI pipeline and Coveralls
+
+## GitHub Actions
+
+The pipeline is configured in `.github/workflows/ci.yml` and triggers on every push to the `main` branch. It runs on Ubuntu 24.04 and performs the following steps:
+
+1. Check out the repository
+2. Set up Node.js v22
+3. Install dependencies with `npm install`
+4. Run tests with coverage using `npm run coverage`
+5. Upload the generated `coverage/lcov.info` report to Coveralls
+
+The `continue-on-error: true` flag is set on the coverage step, ensuring that the Coveralls upload runs even when tests fail due to known bugs in the library.  
+
+**Screenshot of GitHub Actions workflow**  
+
+![GitHub Actions Workflow](https://github.com/user-attachments/assets/b9ff98cb-2b3a-4541-b6e5-f8bf8d9203d2)  
+
+**Screenshot of GitHub Actions test results**  
+
+![GitHub Actions Test Results](https://github.com/user-attachments/assets/65a2b336-8c7d-43e4-911a-0c4b4811958e)  
+
+## Coveralls
+
+The repository is linked to Coveralls via the `coverallsapp/github-action@v2` action using the `GITHUB_TOKEN` secret, which is provided automatically by GitHub Actions.
+
+A Coveralls badge has been added to the repository README, displaying the current coverage percentage.
+
+## Workflow configuration
+```yaml
+name: Test & Coverage
+on:
+  push:
+    branches: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm install
+      - name: Run tests with coverage
+        run: npm run coverage
+        continue-on-error: true
+      - name: Upload to Coveralls
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+```
+
+# 4. Files tested and rationale
 
 ## Testing strategy
 
@@ -84,7 +137,6 @@ src/toInteger.js:1:import toFinite from './toFinite.js'
 This revealed dependency chains such as `toNumber → toFinite → toInteger → chunk/drop`, meaning that testing `toNumber` provided foundational coverage for all files above it in the chain. I prioritized testing these foundational modules first.
 
 I then read all remaining source files visually and selected additional files to test based on identifying suspected bugs.
-
 
 ## Files tested
 
@@ -139,7 +191,7 @@ I then read all remaining source files visually and selected additional files to
 | `reduce.js` | Delegates primarily to `.internal` files |
 | `slice.js` | Indirectly covered through `chunk` and `drop` tests |
 
-# 4. Test implementation
+# 5. Test implementation
 
 Tests were written using Vitest, with assertions using the `expect` syntax. Each source file has its own dedicated test file in the `test/` directory, named after the file it tests.
 
@@ -179,7 +231,7 @@ Each test file covers:
 
 Several bugs were identified visually before writing tests. In these cases, tests were written specifically to confirm the suspected bug. In other cases, bugs were discovered when tests failed against code that appeared correct on first reading.
 
-# 5. Bugs found
+# 6. Bugs found
 
 11 bugs were identified and reported in the GitHub issue tracker. All bugs were confirmed by failing unit tests. No bugs were fixed in the library – my approach was to observe and document incorrect behaviour, not to correct it.
 
@@ -197,11 +249,13 @@ Several bugs were identified visually before writing tests. In these cases, test
 | 10 | `castArray.js` | Returns `[undefined]` instead of `[]` when called with no arguments |
 | 11 | `countBy.js` | Initialises count at `0` instead of `1`, every count is one less than expected |
 
-All issues are documented in the [repository's issue tracker](https://github.com/sara-virtanen/deployment/issues) with root cause analysis, expected vs actual behaviour, and the number of failing unit tests confirming each bug.
+All issues are documented in the [repository's issue tracker](https://github.com/sara-virtanen/deployment/issues) with root cause analysis, expected vs actual behaviour, and the number of failing unit tests confirming each bug.  
+
+**Screenshot of GitHub Issue Tracker**
 
 ![Issue Tracker](https://github.com/user-attachments/assets/bb047e2d-7b2f-44fb-883b-f671fb5bb2fd)
 
-# 6. Coverage results
+# 7. Coverage results
 
 Coverage reports are publicly accessible at [Coveralls](https://coveralls.io/github/sara-virtanen/deployment?branch=main).
 
@@ -219,50 +273,6 @@ The remaining uncovered lines are concentrated in the 13 untested files listed i
 
 Branch coverage of 86.41% is notably higher than line coverage, reflecting that the tested files were covered thoroughly with tests targeting multiple code paths and edge cases.
 
-# 7. CI pipeline and Coveralls
-
-## GitHub Actions
-
-The pipeline is configured in `.github/workflows/ci.yml` and triggers on every push to the `main` branch. It runs on Ubuntu 24.04 and performs the following steps:
-
-1. Check out the repository
-2. Set up Node.js v22
-3. Install dependencies with `npm install`
-4. Run tests with coverage using `npm run coverage`
-5. Upload the generated `coverage/lcov.info` report to Coveralls
-
-The `continue-on-error: true` flag is set on the coverage step, ensuring that the Coveralls upload runs even when tests fail due to known bugs in the library.
-
-## Coveralls
-
-The repository is linked to Coveralls via the `coverallsapp/github-action@v2` action using the `GITHUB_TOKEN` secret, which is provided automatically by GitHub Actions.
-
-A Coveralls badge has been added to the repository README, displaying the current coverage percentage.
-
-## Workflow configuration
-```yaml
-name: Test & Coverage
-on:
-  push:
-    branches: [main]
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - name: Install dependencies
-        run: npm install
-      - name: Run tests with coverage
-        run: npm run coverage
-        continue-on-error: true
-      - name: Upload to Coveralls
-        uses: coverallsapp/github-action@v2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-```
 # 8. Production readiness assessment
 
 **Verdict: The library is not production ready.**
