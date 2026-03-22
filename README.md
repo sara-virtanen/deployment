@@ -136,10 +136,10 @@ I then read all remaining source files visually and selected additional files to
 | `isBoolean.js` | Type checking utility |
 | `isDate.js` | Type checking utility |
 | `isEmpty.js` | Complex function with many branches |
-| `isLength.js` | Foundational — depended on by `isArrayLike` |
-| `isObject.js` | Foundational — depended on by `toNumber` |
-| `isObjectLike.js` | Foundational — depended on by 6+ files |
-| `isSymbol.js` | Foundational — depended on by `toNumber`, `toString` |
+| `isLength.js` | Foundational – depended on by `isArrayLike` |
+| `isObject.js` | Foundational – depended on by `toNumber` |
+| `isObjectLike.js` | Foundational – depended on by 6+ files |
+| `isSymbol.js` | Foundational – depended on by `toNumber`, `toString` |
 | `toFinite.js` | Depended on by `toInteger` |
 | `toInteger.js` | Depended on by `chunk`, `drop` |
 | `toNumber.js` | Depended on by `toFinite` |
@@ -245,8 +245,6 @@ The 60% minimum requirement was exceeded comfortably. Coverage was measured acro
 
 The remaining uncovered lines are concentrated in the 13 untested files listed in section 3. Of these, several delegate their core logic entirely to `.internal` files, meaning their behaviour cannot be fully verified through black-box testing alone. The `.internal` directory itself is not included in coverage metrics and represents an unknown quantity, bugs may exist there that the test suite cannot detect.
 
-Branch coverage of 86.41% is notably higher than line coverage, reflecting that the tested files were covered thoroughly with tests targeting multiple code paths and edge cases.
-
 # 8. Production readiness assessment
 
 **Verdict: The library is not production ready.**
@@ -255,6 +253,6 @@ Testing uncovered 11 confirmed bugs across 30 tested files. Several affect core,
 
 The `defaultTo.js` bug cascades into `defaultToAny.js`, demonstrating that bugs in foundational functions propagate upward through the dependency chain.
 
-The 13 untested files were reviewed visually and appeared correct, but have not been dynamically verified. The `.internal` directory was excluded entirely from testing per the assignment instructions, and may contain additional bugs.
+The 13 untested files were reviewed visually and appeared correct, but have not been verified through testing. The `.internal` directory was excluded entirely from testing per the assignment instructions, and may contain additional bugs.
 
 The library requires thorough bug fixing and re-verification before it can be considered suitable for production deployment.
