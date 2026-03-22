@@ -82,7 +82,11 @@ The `continue-on-error: true` flag is set on the coverage step, ensuring that th
 
 ![GitHub Actions Workflow Runs](https://github.com/user-attachments/assets/b9ff98cb-2b3a-4541-b6e5-f8bf8d9203d2)  
 
-**Screenshot of GitHub Actions test results**  
+**Screenshots of GitHub Actions test results**  
+
+![GitHub Actions Test Results](https://github.com/user-attachments/assets/d4e0471b-98c0-4628-9739-d1d1183ffd40)  
+
+![GitHub Actions Test Results](https://github.com/user-attachments/assets/9b7efd7f-5a2b-4095-be86-d47c8464c90a)  
 
 ![GitHub Actions Test Results](https://github.com/user-attachments/assets/65a2b336-8c7d-43e4-911a-0c4b4811958e)  
 
