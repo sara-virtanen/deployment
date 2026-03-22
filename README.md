@@ -243,7 +243,7 @@ Final coverage as reported by Coveralls:
 
 The 60% minimum requirement was exceeded comfortably. Coverage was measured across all 43 source files in `src/`, excluding the `.internal` directory.
 
-The remaining uncovered lines are concentrated in the 13 untested files listed in section 3. Of these, several delegate their core logic entirely to `.internal` files, meaning their behaviour cannot be fully verified through black-box testing alone. The `.internal` directory itself is not included in coverage metrics and represents an unknown quantity, bugs may exist there that the test suite cannot detect.
+The remaining uncovered lines are concentrated in the 13 untested files listed in section 4. Of these, several delegate their core logic entirely to `.internal` files, meaning their behaviour cannot be fully verified through black-box testing alone. The `.internal` directory itself is not included in coverage metrics and represents an unknown quantity, bugs may exist there that the test suite cannot detect.
 
 # 8. Production readiness assessment
 
