@@ -74,19 +74,27 @@ The pipeline is configured in `.github/workflows/ci.yml` and triggers on every p
 
 The `continue-on-error: true` flag is set on the coverage step, ensuring that the Coveralls upload runs even when tests fail due to known bugs in the library.  
 
-**Screenshots of GitHub Actions workflow and runs**  
+**Screenshot of GitHub Actions workflow**  
 
 ![GitHub Actions Workflow File](https://github.com/user-attachments/assets/68b8d1d9-5c8a-4d5f-a4f5-2598c5561e8c)  
 
+**Screenshot of GitHub Actions workflow run**  
+
 ![GitHub Actions Workflow Run](https://github.com/user-attachments/assets/c703813b-efd1-47df-a0f8-832ddbbcbc8b)  
+
+**Screenshot of GitHub Actions workflow runs**  
 
 ![GitHub Actions Workflow Runs](https://github.com/user-attachments/assets/b9ff98cb-2b3a-4541-b6e5-f8bf8d9203d2)  
 
-**Screenshots of GitHub Actions test results**  
+**Screenshot of GitHub Actions test results**  
 
 ![GitHub Actions Test Results](https://github.com/user-attachments/assets/d4e0471b-98c0-4628-9739-d1d1183ffd40)  
 
+**Screenshot of GitHub Actions test results with coverage data**  
+
 ![GitHub Actions Test Results](https://github.com/user-attachments/assets/9b7efd7f-5a2b-4095-be86-d47c8464c90a)  
+
+**Screenshot of successful upload of coverage to Coveralls**  
 
 ![GitHub Actions Test Results](https://github.com/user-attachments/assets/65a2b336-8c7d-43e4-911a-0c4b4811958e)  
 
