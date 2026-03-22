@@ -208,20 +208,26 @@ npx vitest run test/<filename>.test.js
 
 Running tests individually was the preferred approach during development, allowing each new test file to be verified before moving on to the next.
 
-## Test rationale
+## Test rationale and coverage
 
-Tests were written based on the documented behaviour described in each function's JSDoc comment, not based on what the code actually does. Where the code deviated from the documentation, the test was written to reflect the documented expectation, causing it to fail and exposing the bug.
+Tests were written based on the documented behaviour described in each function's JSDoc comment, not based on what the code actually does. A failing test is therefore a direct signal that the implementation deviates from its specification.
 
-Each test file covers:
-- The primary use cases shown in the JSDoc examples
-- Edge cases such as null, undefined, empty arrays, and NaN inputs
+The test suite consists of 30 test files and 204 individual unit tests. Each source file has its own dedicated test file, named after the file it tests. The number of tests per file varies based on the complexity of the function — simpler functions with few branches have fewer tests, while more complex functions with multiple code paths and edge cases have more.  
+
+Every test file covers at minimum:  
+
+- The primary use cases documented in the JSDoc examples
+- Null and undefined inputs where applicable
+- Empty inputs such as empty arrays or empty strings
+- Edge cases specific to the function, such as NaN handling, negative numbers, boundary values, and type coercion
 - Both truthy and falsy branches where applicable
 
-## Bugs found through testing
-
-Several bugs were identified visually before writing tests. In these cases, tests were written specifically to confirm the suspected bug. In other cases, bugs were discovered when tests failed against code that appeared correct on first reading.
 
 # 6. Bugs found
+
+Of the 204 tests, 176 pass and 28 fail.
+
+Several bugs were identified visually before writing tests. In these cases, tests were written specifically to confirm the suspected bug. In other cases, bugs were discovered when tests failed against code that appeared correct on first reading.
 
 11 bugs were identified and reported in the GitHub issue tracker. All bugs were confirmed by failing unit tests. No bugs were fixed in the library – my approach was to observe and document incorrect behaviour, not to correct it.
 
