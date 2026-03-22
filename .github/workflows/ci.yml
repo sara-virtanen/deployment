@@ -1,34 +1,20 @@
 name: Test & Coverage
-
 on:
   push:
     branches: [main]
-
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-
       - name: Install dependencies
         run: npm install
-
-      - name: Run tests
-        run: npm test
-        continue-on-error: true
-
-      - name: Generate coverage
+      - name: Run tests with coverage
         run: npm run coverage
         continue-on-error: true
-
-      - name: Check coverage file
-        run: ls -la coverage/ || echo "coverage directory not found"
-
       - name: Upload to Coveralls
         uses: coverallsapp/github-action@v2
         with:
