@@ -89,31 +89,6 @@ The repository is linked to Coveralls via the `coverallsapp/github-action@v2` ac
 
 A Coveralls badge has been added to the repository README, displaying the current coverage percentage.
 
-## Workflow configuration
-```yaml
-name: Test & Coverage
-on:
-  push:
-    branches: [main]
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - name: Install dependencies
-        run: npm install
-      - name: Run tests with coverage
-        run: npm run coverage
-        continue-on-error: true
-      - name: Upload to Coveralls
-        uses: coverallsapp/github-action@v2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-```
-
 # 4. Files tested and rationale
 
 ## Testing strategy
