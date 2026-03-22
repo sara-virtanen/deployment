@@ -135,20 +135,20 @@ I then read all remaining source files visually and selected additional files to
 | `endsWith.js` | Depends on tested foundations |
 | `filter.js` | Suspected bug: incorrect result initialisation |
 | `isArguments.js` | Depends on tested foundations |
-| `isArrayLike.js` | Foundational — depended on by multiple files |
+| `isArrayLike.js` | Foundational – depended on by multiple files |
 | `isArrayLikeObject.js` | Depends on tested foundations |
 | `isBoolean.js` | Depends on tested foundations |
 | `isDate.js` | Depends on tested foundations |
 | `isEmpty.js` | Depends on tested foundations |
-| `isLength.js` | Foundational — depended on by multiple files |
-| `isObject.js` | Foundational — depended on by multiple files |
-| `isObjectLike.js` | Foundational — depended on by multiple files |
-| `isSymbol.js` | Foundational — depended on by multiple files |
-| `toFinite.js` | Foundational — depended on by multiple files |
-| `toInteger.js` | Foundational — depended on by multiple files |
-| `toNumber.js` | Foundational — depended on by multiple files |
-| `toString.js` | Foundational — depended on by multiple files |
-| `upperFirst.js` | Foundational — depended on by multiple files |
+| `isLength.js` | Foundational – depended on by multiple files |
+| `isObject.js` | Foundational – depended on by multiple files |
+| `isObjectLike.js` | Foundational – depended on by multiple files |
+| `isSymbol.js` | Foundational – depended on by multiple files |
+| `toFinite.js` | Foundational – depended on by multiple files |
+| `toInteger.js` | Foundational – depended on by multiple files |
+| `toNumber.js` | Foundational – depended on by multiple files |
+| `toString.js` | Foundational – depended on by multiple files |
+| `upperFirst.js` | Foundational – depended on by multiple files |
 | `words.js` | Depends on tested foundations |
 
 ## Files not tested
