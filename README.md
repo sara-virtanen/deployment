@@ -50,7 +50,6 @@ Tests were run locally during development using `npm test` to verify correctness
 - Node.js: v22.22.1
 - npm: 10.9.4
 - Test runner: Vitest 2.1.9
-- Coverage provider: `@vitest/coverage-v8` 2.1.9
 
 **Coverage reporting**
 
