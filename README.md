@@ -129,44 +129,44 @@ I then read all remaining source files visually and selected additional files to
 | `countBy.js` | Suspected bug: incorrect initial count value |
 | `defaultTo.js` | Suspected bug: missing NaN handling |
 | `defaultToAny.js` | Confirmed cascade from `defaultTo.js` bug |
-| `difference.js` | Array utility, visually inspected, no bugs suspected |
+| `difference.js` | Depends on tested foundations |
 | `divide.js` | Suspected bug: wrong variable in division operation |
-| `drop.js` | Depends on tested `slice`, `toInteger` |
-| `endsWith.js` | String utility, visually inspected, no bugs suspected |
+| `drop.js` | Depends on tested foundations |
+| `endsWith.js` | Depends on tested foundations |
 | `filter.js` | Suspected bug: incorrect result initialisation |
-| `isArguments.js` | Depended on by `isEmpty` |
-| `isArrayLike.js` | Depended on by `isArrayLikeObject`, `isEmpty`, `keys` |
-| `isArrayLikeObject.js` | Depended on by `difference` |
-| `isBoolean.js` | Type checking utility |
-| `isDate.js` | Type checking utility |
-| `isEmpty.js` | Complex function with many branches |
-| `isLength.js` | Foundational – depended on by `isArrayLike` |
-| `isObject.js` | Foundational – depended on by `toNumber` |
-| `isObjectLike.js` | Foundational – depended on by 6+ files |
-| `isSymbol.js` | Foundational – depended on by `toNumber`, `toString` |
-| `toFinite.js` | Depended on by `toInteger` |
-| `toInteger.js` | Depended on by `chunk`, `drop` |
-| `toNumber.js` | Depended on by `toFinite` |
-| `toString.js` | Depended on by `capitalize`, `camelCase` |
-| `upperFirst.js` | Depended on by `capitalize`, `camelCase` |
-| `words.js` | Depended on by `camelCase` |
+| `isArguments.js` | Depends on tested foundations |
+| `isArrayLike.js` | Foundational — depended on by multiple files |
+| `isArrayLikeObject.js` | Depends on tested foundations |
+| `isBoolean.js` | Depends on tested foundations |
+| `isDate.js` | Depends on tested foundations |
+| `isEmpty.js` | Depends on tested foundations |
+| `isLength.js` | Foundational — depended on by multiple files |
+| `isObject.js` | Foundational — depended on by multiple files |
+| `isObjectLike.js` | Foundational — depended on by multiple files |
+| `isSymbol.js` | Foundational — depended on by multiple files |
+| `toFinite.js` | Foundational — depended on by multiple files |
+| `toInteger.js` | Foundational — depended on by multiple files |
+| `toNumber.js` | Foundational — depended on by multiple files |
+| `toString.js` | Foundational — depended on by multiple files |
+| `upperFirst.js` | Foundational — depended on by multiple files |
+| `words.js` | Depends on tested foundations |
 
 ## Files not tested
 
 | File | Reason for exclusion |
 |------|----------------------|
-| `add.js` | Delegates entirely to `.internal/createMathOperation` |
-| `at.js` | Core logic in `.internal/baseAt` and `.internal/baseFlatten` |
-| `ceil.js` | Delegates entirely to `.internal/createRound` |
+| `add.js` | Delegates entirely to `.internal` |
+| `at.js` | Delegates entirely to `.internal` |
+| `ceil.js` | Delegates entirely to `.internal` |
 | `eq.js` | Visually inspected, no bugs found |
 | `every.js` | Visually inspected, no bugs found |
-| `get.js` | Core logic in `.internal/baseGet`, wrapper only |
+| `get.js` | Delegates entirely to `.internal` |
 | `isBuffer.js` | Indirectly covered through `isEmpty` tests |
 | `isTypedArray.js` | Indirectly covered through `isEmpty` tests |
 | `keys.js` | Visually inspected, no bugs found |
 | `map.js` | Visually inspected, no bugs found |
 | `memoize.js` | Visually inspected, no bugs found |
-| `reduce.js` | Delegates primarily to `.internal` files |
+| `reduce.js` | Delegates primarily to `.internal` |
 | `slice.js` | Indirectly covered through `chunk` and `drop` tests |
 
 # 5. Test implementation
